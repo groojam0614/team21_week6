@@ -8,8 +8,8 @@ import java.io.IOException;
  */
 public class App {
     public static void main( String[] args ) throws IOException {
-        final String apiKey = args[0];
-        final String summonerName = args[1];
+        final String apiKey = "8242f154-342d-4b86-9642-dfa78cdb9d9c";//args[0];
+        final String summonerName = "spoey";//args[1];
 
         GameParticipantListener listener = new GameParticipantListener() {
             @Override
@@ -19,6 +19,7 @@ public class App {
         };
 
         InGameSummonerQuerier querier = new InGameSummonerQuerier(apiKey, listener);
-        querier.queryGameKey(summonerName);
+        String a = querier.queryGameKey(summonerName);
+        System.out.println("Game : "+a);//게임코드 나오는거
     }
 }
